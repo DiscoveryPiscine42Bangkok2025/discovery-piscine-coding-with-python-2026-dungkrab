@@ -40,10 +40,6 @@ def checkmate(board):
 
     for i in range(len(rows)):
 
-        if len(rows[i]) != len(rows):
-            print("Error: wrong format.")
-            return
-
         for j in range(len(rows[i])):
             piece = rows[i][j]
 
