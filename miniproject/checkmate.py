@@ -96,8 +96,6 @@ def checkB(row, col, board):
             c += dc
     return False
     
-
-
 def checkR(row, col, board):
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
     b_len = len(board)
