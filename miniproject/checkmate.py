@@ -24,7 +24,7 @@ def checkmate(board):
                     king_count += 1
 
                     if king_count > 1:
-                        print("Error: There is no king.")
+                        print("Error: There is more than 1 king.")
                         return
             # not piece(PQBRP)
             else:
@@ -32,13 +32,17 @@ def checkmate(board):
 
         rows.append(clean_row)
 
+    if king_count != 1:
+        print("Error: There is no king.")
+        return
+
     ischeck = False
 
     for i in range(len(rows)):
 
-        #if len(rows[i]) != len(rows):
-            #print("Error: wrong format.")
-            #return
+        if len(rows[i]) != len(rows):
+            print("Error: wrong format.")
+            return
 
         for j in range(len(rows[i])):
             piece = rows[i][j]
@@ -46,11 +50,11 @@ def checkmate(board):
             if piece == "P":
                 ischeck = checkP(i, j, rows)
             elif piece == "B":
-                ischeck = checkP(i, j, rows)
+                ischeck = checkB(i, j, rows)
             elif piece == "R":
-                ischeck = checkP(i, j, rows)
+                ischeck = checkR(i, j, rows)
             elif piece == "Q":
-                ischeck = checkP(i, j, rows)
+                ischeck = checkQ(i, j, rows)
 
             if ischeck:
                 break
